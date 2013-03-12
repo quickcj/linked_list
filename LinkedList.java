@@ -33,11 +33,16 @@ public class LinkedList extends Node {
  	* length		
  	*
  	* 		it returns the length of the linked list
- 	*
- 	* @param	given an array of nodes
  	*/
 	public int length() {
-		return 0;
+		int count = 1;
+		Node temp = new Node(1, head);
+		while(temp.getNext() != null) {
+			push();
+			count++;
+			temp.setNext(temp.getNext());
+		}
+		return count;
 	}
 	/**
 	 * buildOneTwoThree
